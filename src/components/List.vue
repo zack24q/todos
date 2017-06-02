@@ -16,7 +16,7 @@
               @toggle="toggleItem(item)" @delete="deleteItem(item)"></item>
       </div>
       <!--todo 6.父组件向子组件传递属性-->
-      <bar :sumDone="sumDone" :filterType="filterType" @changeFilter="changeFilter"
+      <bar :sumDone="sumDone" :filterClass="filterClass.bind(this)" @changeFilter="changeFilter"
            @clearComputed="clearComputed"></bar>
     </div>
   </div>
@@ -103,6 +103,11 @@
       clearComputed () {
         for (let item of this.list.filter(item => item.done)) {
           this.deleteItem(item)
+        }
+      },
+      filterClass (type) {
+        return {
+          'selected': this.filterType === type
         }
       },
       changeFilter (type) {

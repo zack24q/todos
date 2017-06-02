@@ -16,17 +16,10 @@
   import TYPE from '../filterType'
   export default {
     name: 'Item',
-    props: ['sumDone', 'filterType'],
+    props: ['sumDone', 'filterClass'],
     data () {
       return {
         TYPE
-      }
-    },
-    methods: {
-      filterClass (type) {
-        return {
-          'selected': this.filterType === type
-        }
       }
     }
   }
