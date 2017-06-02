@@ -6,13 +6,16 @@
         <div class="checkbox" @click="toggleAll">
           <span class="arrow" :class="{'enable':allDone}">❯</span>
         </div>
+        <!--todo 10.表单双向绑定-->
         <input type="text" placeholder="What needs to be done?" v-model.trim="inputContent"
                @keyup.enter="addItem(inputContent)">
       </div>
       <div>
+        <!--todo 9.列表渲染-->
         <item v-for="(item, i) in filterList" :key="item" :value="item"
               @toggle="toggleItem(item)" @delete="deleteItem(item)"></item>
       </div>
+      <!--todo 6.父组件向子组件传递属性-->
       <bar :sumDone="sumDone" :filterType="filterType" @changeFilter="changeFilter"
            @clearComputed="clearComputed"></bar>
     </div>
@@ -25,8 +28,10 @@
   import Bar from '../components/bar.vue'
   export default {
     name: 'List',
+    // todo 3.引入组件
     components: {Item, Bar},
     data () {
+      // todo 4.组件状态
       let storage = localStorage.getItem('todolist')
       return {
         TYPE,
@@ -82,6 +87,7 @@
         this.inputContent = ''
       },
       toggleItem (item) {
+        // todo 5.修改组件状态
         item.done = !item.done
       },
       deleteItem (item) {

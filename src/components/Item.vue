@@ -1,9 +1,11 @@
 <template>
   <div class="item" :class="{'done':value.done}">
     <div class="checkbox" @click="$emit('toggle')">
+      <!--todo 8.条件渲染-->
       <span v-if="value.done">✓</span>
     </div>
     {{value.content}}
+    <!--todo 7.子组件向父组件通讯-->
     <div class="delete" @click="$emit('delete')">X</div>
   </div>
 </template>

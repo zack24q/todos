@@ -5,6 +5,7 @@
 </template>
 
 <script>
+  // todo 2.单文件组件
   export default {
     name: 'app'
   }

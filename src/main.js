@@ -4,6 +4,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+// todo 1.入口
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
