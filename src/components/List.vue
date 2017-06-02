@@ -12,7 +12,7 @@
       </div>
       <div>
         <!--todo 9.列表渲染-->
-        <item v-for="(item, i) in filterList" :key="item" :value="item"
+        <item v-for="(item, i) in filterList" :key="item.id" :value="item"
               @toggle="toggleItem(item)" @delete="deleteItem(item)"></item>
       </div>
       <!--todo 6.父组件向子组件传递属性-->
@@ -37,14 +37,13 @@
         TYPE,
         inputContent: '',
         filterType: TYPE.all,
-        list: storage && JSON.parse(storage) || []
+        list: (storage && JSON.parse(storage)) || []
       }
     },
     watch: {
       list: {
         deep: true,
         handler (val) {
-          console.log('localStorage.setItem')
           localStorage.setItem('todolist', JSON.stringify(val))
         }
       }
@@ -58,6 +57,8 @@
             return this.list.filter(item => !item.done)
           case TYPE.completed:
             return this.list.filter(item => item.done)
+          default :
+            return this.state.list
         }
       },
       allDone () {
@@ -83,7 +84,7 @@
     methods: {
       addItem (content) {
         if (content === '') return
-        this.list.push({content, done: false})
+        this.list.push({id: new Date().getTime(), content, done: false})
         this.inputContent = ''
       },
       toggleItem (item) {
