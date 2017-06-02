@@ -1,10 +1,10 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import '../../styles/List.css';
 import TYPE from '../../filterType'
 import Item from '../../components/Item'
 import Bar from '../../components/Bar'
 
-class List extends Component {
+class List extends PureComponent {
     constructor(props) {
         super(props);
         let storage = localStorage.getItem('todolist');
@@ -121,13 +121,13 @@ class List extends Component {
                             this.filterList().map((item, i) => {
                                 return <Item key={i} value={item}
                                              toggle={this.toggleItem.bind(this, item)}
-                                             delete={this.deleteItem.bind(this, item)}></Item>
+                                             delete={this.deleteItem.bind(this, item)}/>
                             })
                         }
                     </div>
                     <Bar sumDone={this.sumDone()} filterClass={this.filterClass.bind(this)}
                          changeFilter={this.changeFilter.bind(this)}
-                         clearComputed={this.clearComputed.bind(this)}></Bar>
+                         clearComputed={this.clearComputed.bind(this)}/>
                 </div>
             </div>
         );

@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import '../../styles/Item.css';
 
-class Item extends Component {
+class Item extends PureComponent {
     render() {
         return (
             <div className={`item${this.props.value.done ? ' done' : ''}`}>

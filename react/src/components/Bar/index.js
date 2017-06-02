@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import '../../styles/Bar.css';
 import TYPE from '../../filterType'
 
-class Bar extends Component {
+class Bar extends PureComponent {
     render() {
         return (
             <div className="bar">
                 <div className="left">{this.props.sumDone} items left</div>
-                <div className="fill"></div>
+                <div className="fill"/>
                 <div className="filter">
                     <span className={this.props.filterClass(TYPE.all)}
                           onClick={() => this.props.changeFilter(TYPE.all)}>All</span>
@@ -16,7 +16,7 @@ class Bar extends Component {
                     <span className={this.props.filterClass(TYPE.completed)}
                           onClick={() => this.props.changeFilter(TYPE.completed)}>Completed</span>
                 </div>
-                <div className="fill"></div>
+                <div className="fill"/>
                 <div className="right" onClick={this.props.clearComputed}>Clear computed</div>
             </div>
         );
