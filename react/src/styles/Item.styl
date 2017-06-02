@@ -1,0 +1,49 @@
+@require 'global.styl'
+
+.item {
+  $rowStyle()
+  word-break break-word
+  + .item {
+    border-top none
+  }
+  &.done {
+    text-decoration line-through
+    color $grey
+    .checkbox {
+      border-color #53cd7e
+      span {
+        color #53cd7e
+      }
+    }
+  }
+  &:hover {
+    .delete {
+      display block
+    }
+  }
+  .checkbox {
+    transform translate(0, -50%)
+    width 26px
+    height 26px
+    border $border
+    border-color #808080
+    border-radius 50%
+    span {
+      position absolute
+      left 4px
+      top: 3px
+      line-height 1
+      color $black
+    }
+  }
+  .delete {
+    display none
+    padding 0 10px
+    position absolute
+    cursor pointer
+    right 0
+    top: 50%
+    transform translate(0, -50%)
+    color #ff6261
+  }
+}

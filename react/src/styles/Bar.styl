@@ -1,0 +1,44 @@
+@require 'global.styl'
+
+.bar {
+  display flex
+  flex-wrap wrap
+  padding 0 10px
+  font-size 14px
+  background-color #fff
+  > div {
+    line-height 40px
+  }
+  .fill {
+    flex 1
+  }
+  .left, .right {
+    width 110px
+  }
+  .right {
+    text-align right
+    cursor pointer
+    &:hover {
+      text-decoration underline
+    }
+  }
+  .filter {
+    span {
+      line-height 30px
+      cursor pointer
+      border $border
+      border-color transparent
+      border-radius 3px
+      padding 2px 6px
+      + span {
+        margin-left 5px
+      }
+      &:hover {
+        border-color lighten(#ffab99, 50%)
+      }
+      &.selected {
+        border-color #ffab99
+      }
+    }
+  }
+}

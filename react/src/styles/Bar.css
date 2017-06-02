@@ -1,0 +1,41 @@
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 10px;
+  font-size: 14px;
+  background-color: #fff;
+}
+.bar > div {
+  line-height: 40px;
+}
+.bar .fill {
+  flex: 1;
+}
+.bar .left,
+.bar .right {
+  width: 110px;
+}
+.bar .right {
+  text-align: right;
+  cursor: pointer;
+}
+.bar .right:hover {
+  text-decoration: underline;
+}
+.bar .filter span {
+  line-height: 30px;
+  cursor: pointer;
+  border: 1px solid #c0c0c0;
+  border-color: transparent;
+  border-radius: 3px;
+  padding: 2px 6px;
+}
+.bar .filter span + span {
+  margin-left: 5px;
+}
+.bar .filter span:hover {
+  border-color: #ffd5cc;
+}
+.bar .filter span.selected {
+  border-color: #ffab99;
+}
