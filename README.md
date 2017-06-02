@@ -1,3 +1,3 @@
 # Todos
 
-> A Todos project write by [vue|react]
+> A todos project write by [vue|react]
