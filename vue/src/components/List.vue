@@ -58,7 +58,7 @@
           case TYPE.completed:
             return this.list.filter(item => item.done)
           default :
-            return this.state.list
+            return this.list
         }
       },
       allDone () {
